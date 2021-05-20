@@ -2,20 +2,14 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	const char	*tmp;
 	int			i;
 
 	i = 0;
-	while (s[i])
+	while (s[i] != (char)c)
 	{
-		if (s[i] == c)
-		{
-			tmp = &s[i];
-			return ((char *)tmp);
-		}	
+		if (!s[i])
+			return (NULL);
 		i++;
 	}
-	if (!c)
-		return (&((char *)s)[i]);
-	return (NULL);
+	return ((char *)s + i);
 }
