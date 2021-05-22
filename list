@@ -24,15 +24,15 @@ ft_strncmp.c
 ft_strnstr.c
 ft_strrchr.c
 ft_strtrim.c
-ft_tolower.c
 ft_toupper.c
 libft.h
 Makefile
+isdigit
+bzero
+memchr
 
-+memchr
 +substr
 +putendl_fd
-+bzero
 
-++isdigit
+++tolower
 ++putchar_fd
