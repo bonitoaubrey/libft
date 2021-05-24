@@ -1,58 +1,73 @@
 #include "libft.h"
+#include <stdio.h>
 
-static size_t	ft_word_count(char const *s, char c)
+int	ft_number_of_words(char const *s, char c)
 {
-	size_t	n;
-	int		i;
+	int	number_of_words;
+	int	i;
 
+	number_of_words = 0;
 	i = 0;
-	n = 0;
 	while (s[i])
 	{
-		if ((i > 0 && s[i -1] == c &&s[i] != c) || (i == 0 && s[i] != c))
-			n++;
-		i++;
-	}
-	return (n);
-}
-
-static void	ft_fill(char **res, const char *s, char c, int words)
-{
-	int	i;
-	int	j;
-	int	k;
-
-	i = 0;
-	j = 0;
-	k = 0;
-	while (j < words)
-	{
-		k = 0;
-		while (s[i] == c)
+		while (s[i] && s[i] == c)
 			i++;
-		while (s[i + k] && s[i + k] != c)
-			k++;
-		res[j] = ft_calloc(sizeof(char), k + 1);
-		k = 0;
+		if (s[i] && s[i] != c)
+			number_of_words++;
 		while (s[i] && s[i] != c)
-			res[j][k++] = s[i++];
-		res[j][k] = '\0';
-		j++;
+			i++;
 	}
+	return (number_of_words);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**res;
-	int		words;
+	char	**new_arr;
+	int		i;
+	int		j;
+	int		k;
 
-	if (!s)
+	i = 0;
+	j = 0;
+	printf("Number of words is %d\n", ft_number_of_words(s, c));
+	new_arr = malloc(sizeof(char *) * ft_number_of_words(s, c) + 1);
+	if (!new_arr)
 		return (NULL);
-	words = ft_word_count(s, c);
-	res = ft_calloc(sizeof(char *), words + 1);
-	if (!res)
-		return (NULL);
-	ft_fill(res, s, c, words);
-	res[words] = 0;
-	return (res);
+	new_arr[sizeof(char *) * ft_number_of_words(s, c)] = '\0';
+	while (s[i])
+	{
+		k = 0;
+		printf("k = %d\n", k);
+		printf("i = %d\n\n", i);
+		while (s[i] && s[i] == c)
+			i++;
+		printf("k = %d\n", k);
+		printf("i = %d\n\n", i);
+		while (s[i] && s[i++] != c)
+			k++;
+		i--;
+		new_arr[j] = malloc(k + 1);
+		printf("k = %d\n", k);
+		printf("i = %d\n\n", i);
+		if (!new_arr[j])
+		{
+			while (j >= 0)
+				free(new_arr[j--]);
+			free(new_arr);
+			return (NULL);
+		}
+		i -= k;
+		k = 0;
+		printf("k = %d\n", k);
+		printf("i = %d\n\n", i);
+		while (s[i] && s[i] != c)
+			new_arr[j][k++] = s[i++];
+		new_arr[j][k] = '\0';
+		i++;
+		j++;
+		printf("k = %d\n", k);
+		printf("i = %d\n", i);
+		printf("new\n\n");
+	}
+	return (new_arr);
 }
