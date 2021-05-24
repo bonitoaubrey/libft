@@ -1,73 +1,70 @@
 #include "libft.h"
-#include <stdio.h>
 
-int	ft_number_of_words(char const *s, char c)
+int	ft_number_of_words(char *s, char c)
 {
-	int	number_of_words;
 	int	i;
+	int	is_word;
 
-	number_of_words = 0;
 	i = 0;
-	while (s[i])
+	is_word = 0;
+	while (*s)
 	{
-		while (s[i] && s[i] == c)
+		if (is_word == 0 && *s != c)
+		{
+			is_word = 1;
 			i++;
-		if (s[i] && s[i] != c)
-			number_of_words++;
-		while (s[i] && s[i] != c)
-			i++;
+		}
+		else if (is_word == 1 && *s == c)
+			is_word = 0;
+		s++;
 	}
-	return (number_of_words);
+	return (i);
+}
+
+int	ft_strlenword(char *s, char c)
+{
+	int	len;
+
+	len = 0;
+	while (*s != c && *s != '\0')
+	{
+		len++;
+		s++;
+	}
+	return (len);
+}
+
+void	*my_free(char **new_arr, int i)
+{
+	while (i-- > 0)
+		free(new_arr[i]);
+	free (new_arr);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**new_arr;
+	int		number_of_words;
 	int		i;
-	int		j;
-	int		k;
 
-	i = 0;
-	j = 0;
-	printf("Number of words is %d\n", ft_number_of_words(s, c));
-	new_arr = malloc(sizeof(char *) * ft_number_of_words(s, c) + 1);
+	if (!s)
+		return (NULL);
+	number_of_words = ft_number_of_words((char *)s, c);
+	new_arr = (char **)malloc((number_of_words + 1) * sizeof(char *));
 	if (!new_arr)
 		return (NULL);
-	new_arr[sizeof(char *) * ft_number_of_words(s, c)] = '\0';
-	while (s[i])
+	i = 0;
+	while (number_of_words--)
 	{
-		k = 0;
-		printf("k = %d\n", k);
-		printf("i = %d\n\n", i);
-		while (s[i] && s[i] == c)
-			i++;
-		printf("k = %d\n", k);
-		printf("i = %d\n\n", i);
-		while (s[i] && s[i++] != c)
-			k++;
-		i--;
-		new_arr[j] = malloc(k + 1);
-		printf("k = %d\n", k);
-		printf("i = %d\n\n", i);
-		if (!new_arr[j])
-		{
-			while (j >= 0)
-				free(new_arr[j--]);
-			free(new_arr);
-			return (NULL);
-		}
-		i -= k;
-		k = 0;
-		printf("k = %d\n", k);
-		printf("i = %d\n\n", i);
-		while (s[i] && s[i] != c)
-			new_arr[j][k++] = s[i++];
-		new_arr[j][k] = '\0';
+		while (*s == c && *s != '0')
+			s++;
+		new_arr[i] = ft_substr((char *)s, 0, ft_strlenword((char *)s, c));
+		if (!new_arr[i])
+			return (my_free(new_arr, i));
+		s = s + ft_strlenword((char *)s, c);
 		i++;
-		j++;
-		printf("k = %d\n", k);
-		printf("i = %d\n", i);
-		printf("new\n\n");
 	}
+	new_arr[i] = NULL;
 	return (new_arr);
 }
