@@ -9,24 +9,22 @@ int	ft_isspace(int c)
 		return (0);
 }
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *s)
 {
-	int	minus;
-	int	num;
+	int	n;
 	int	i;
+	int	minus;
 
-	minus = 1;
+	n = 0;
 	i = 0;
-	num = 0;
-	while (ft_isspace(str[i]))
+	minus = 1;
+	while (ft_isspace(s[i]))
 		i++;
-	if (str[i] == '-')
+	if (s[i] == '-')
 		minus *= -1;
-	if (str[i] == '-' || str[i] == '+')
+	if (s[i] == '-' || s[i] == '+')
 		i++;
-	while (ft_isdigit(str[i]))
-	{
-		num = num * 10 + str[i++] - '0';
-	}
-	return (num * minus);
+	while (ft_isdigit(s[i]))
+		n = n * 10 + s[i++] - '0';
+	return (n * minus);
 }
