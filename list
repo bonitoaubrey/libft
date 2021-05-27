@@ -19,7 +19,6 @@ ft_strmapi.c
 ft_strnstr.c
 ft_strrchr.c
 ft_strtrim.c
-ft_toupper.c
 libft.h
 Makefile
 isdigit
@@ -35,4 +34,5 @@ putendl_fd
 tolower
 isalnum
 putchar_fd
+toupper
 strncmp
