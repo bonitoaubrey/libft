@@ -31,8 +31,8 @@ memset
 
 strchr
 substr
-strncmp
 putendl_fd
 
 tolower
 putchar_fd
+strncmp
