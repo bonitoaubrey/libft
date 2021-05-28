@@ -9,12 +9,12 @@ int	ft_number_of_words(char *s, char c)
 	is_word = 0;
 	while (*s)
 	{
-		if (is_word == 0 && *s != c)
+		if (*s != c && !is_word)
 		{
 			is_word = 1;
 			number_of_words++;
 		}
-		else if (is_word == 1 && *s == c)
+		else if (*s == c && is_word == 1)
 			is_word = 0;
 		s++;
 	}
@@ -26,19 +26,16 @@ int	ft_word_len(char *s, char c)
 	int	len;
 
 	len = 0;
-	while (*s && *s != c)
-	{
-		s++;
+	while (*s != c && *s++)
 		len++;
-	}
 	return (len);
 }
 
-void	*ft_free(char **arr, int i)
+void	*ft_free(char **new_arr, int i)
 {
 	while (i--)
-		free(arr[i]);
-	free(arr);
+		free (new_arr[i]);
+	free (new_arr);
 	return (NULL);
 }
 
@@ -51,13 +48,13 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	number_of_words = ft_number_of_words((char *)s, c);
-	new_arr = malloc(sizeof(char *) * (number_of_words + 1));
+	new_arr = (char **)malloc(sizeof(char *) * (number_of_words + 1));
 	if (!new_arr)
 		return (NULL);
 	i = 0;
 	while (number_of_words--)
 	{
-		while (*s == c && *s)
+		while (*s && *s == c)
 			s++;
 		new_arr[i] = ft_substr((char *)s, 0, ft_word_len((char *)s, c));
 		if (!new_arr[i])
