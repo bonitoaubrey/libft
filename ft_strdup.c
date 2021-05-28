@@ -2,8 +2,8 @@
 
 char	*ft_strdup(const char *s)
 {
-	int		i;
 	char	*new_str;
+	int		i;
 
 	new_str = malloc(ft_strlen(s) + 1);
 	if (!new_str)
