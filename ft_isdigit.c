@@ -2,7 +2,5 @@
 
 int	ft_isdigit(int c)
 {
-	if ((unsigned char)c >= '0' && (unsigned char)c <= '9')
-		return (c);
-	return (0);
+	return ((char)c >= '0' && (char)c <= '9');
 }

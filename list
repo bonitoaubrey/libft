@@ -12,7 +12,6 @@ ft_strlen.c
 ft_strmapi.c
 ft_strnstr.c
 ft_strtrim.c
-isdigit
 bzero
 memchr
 
@@ -30,6 +29,7 @@ isascii
 substr
 putendl_fd
 
+isdigit
 isalpha
 tolower
 isprint
