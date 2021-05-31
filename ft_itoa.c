@@ -7,10 +7,10 @@ int	ft_numlen(int n)
 	len = 0;
 	if (n == 0)
 		return (1);
-	if (n < 0)
+	else if (n < 0)
 	{
-		n *= -1;
 		len++;
+		n *= -1;
 	}
 	while (n > 0)
 	{
@@ -29,7 +29,7 @@ char	*ft_itoa(int n)
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	i = ft_numlen(n);
-	s = (char *)malloc(i + 1);
+	s = malloc(i + 1);
 	if (!s)
 		return (NULL);
 	s[i--] = '\0';
