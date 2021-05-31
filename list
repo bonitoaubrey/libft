@@ -1,7 +1,6 @@
 ft_atoi.c
 ft_itoa.c
 ft_memmove.c
-ft_putstr_fd.c
 ft_split.c
 ft_strlcat.c
 ft_strlcpy.c
@@ -9,7 +8,6 @@ ft_strlen.c
 ft_strmapi.c
 ft_strnstr.c
 ft_strtrim.c
-substr
 
 Makefile
 libft.h
@@ -29,6 +27,8 @@ strchr
 isascii
 putendl_fd
 
+substr
+putstr
 isdigit
 isalpha
 tolower
