@@ -1,17 +1,17 @@
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	little_len;
+	size_t	needle_len;
 
-	little_len = ft_strlen(little);
-	if (!*little)
-		return ((char *)big);
-	while (*big && len >= little_len)
+	needle_len = ft_strlen(needle);
+	if (!*needle)
+		return ((char *)haystack);
+	while (*haystack && len >= needle_len)
 	{
-		if (*big == *little && !(ft_memcmp(big, little, little_len)))
-			return ((char *)big);
-		big++;
+		if (*haystack == *needle && !(ft_memcmp(haystack, needle, needle_len)))
+			return ((char *)haystack);
+		haystack++;
 		len--;
 	}
 	return (NULL);

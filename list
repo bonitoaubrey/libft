@@ -4,7 +4,6 @@ ft_memmove.c
 ft_split.c
 ft_strlcat.c
 ft_strlcpy.c
-ft_strlen.c
 ft_strmapi.c
 ft_strnstr.c
 ft_strtrim.c
@@ -12,6 +11,7 @@ ft_strtrim.c
 Makefile
 libft.h
 
+strlen
 memcpy
 memchr
 memccpy
@@ -21,12 +21,13 @@ strjoin
 strdup
 memcmp
 strrchr
-memset
 putnbr
 strchr
 isascii
 putendl_fd
+strncmp
 
+memset
 substr
 putstr
 isdigit
@@ -36,4 +37,3 @@ isprint
 isalnum
 putchar_fd
 toupper
-strncmp
