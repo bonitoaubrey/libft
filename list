@@ -1,4 +1,3 @@
-ft_atoi.c
 ft_itoa.c
 ft_memmove.c
 ft_split.c
@@ -11,6 +10,7 @@ ft_strtrim.c
 Makefile
 libft.h
 
+atoi
 strlen
 memcpy
 memchr
