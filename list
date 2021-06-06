@@ -3,7 +3,6 @@ ft_memmove.c
 ft_split.c
 ft_strlcat.c
 ft_strlcpy.c
-ft_strmapi.c
 ft_strnstr.c
 ft_strtrim.c
 
@@ -27,6 +26,7 @@ isascii
 putendl_fd
 strncmp
 
+strmapi
 memset
 substr
 putstr
