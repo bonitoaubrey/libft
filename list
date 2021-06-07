@@ -2,13 +2,13 @@ ft_itoa.c
 ft_memmove.c
 ft_split.c
 ft_strlcpy.c
-ft_strnstr.c
 ft_strtrim.c
 putnbr_fd
 
 Makefile
 libft.h
 
+strnstr
 strlcat
 atoi
 strlen
