@@ -1,7 +1,6 @@
 ft_itoa.c
 ft_memmove.c
 ft_split.c
-ft_strlcat.c
 ft_strlcpy.c
 ft_strnstr.c
 ft_strtrim.c
@@ -9,6 +8,7 @@ ft_strtrim.c
 Makefile
 libft.h
 
+strlcat
 atoi
 strlen
 memcpy
@@ -20,7 +20,7 @@ strjoin
 strdup
 memcmp
 strrchr
-putnbr
+putnbr_fd
 strchr
 isascii
 putendl_fd
