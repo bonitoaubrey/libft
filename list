@@ -4,6 +4,7 @@ ft_split.c
 ft_strlcpy.c
 ft_strnstr.c
 ft_strtrim.c
+putnbr_fd
 
 Makefile
 libft.h
@@ -20,7 +21,6 @@ strjoin
 strdup
 memcmp
 strrchr
-putnbr_fd
 strchr
 isascii
 putendl_fd
