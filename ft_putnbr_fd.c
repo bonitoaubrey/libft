@@ -2,8 +2,8 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*str;
+	char	*s;
 
-	str = ft_itoa(n);
-	write(fd, str, ft_strlen(str));
+	s = ft_itoa(n);
+	write(fd, s, ft_strlen(s));
 }

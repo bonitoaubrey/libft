@@ -2,7 +2,6 @@ ft_itoa.c
 ft_split.c
 ft_strlcpy.c
 ft_strtrim.c
-putnbr_fd
 
 Makefile
 libft.h
@@ -26,6 +25,7 @@ putendl_fd
 strncmp
 putstr_fd
 
+putnbr_fd
 memmove
 strmapi
 memset
