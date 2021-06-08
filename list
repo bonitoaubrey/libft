@@ -1,5 +1,4 @@
 ft_itoa.c
-ft_memmove.c
 ft_split.c
 ft_strlcpy.c
 ft_strtrim.c
@@ -27,6 +26,7 @@ putendl_fd
 strncmp
 putstr_fd
 
+memmove
 strmapi
 memset
 substr
