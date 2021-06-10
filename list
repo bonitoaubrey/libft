@@ -4,6 +4,7 @@ ft_strlcpy.c
 ft_strtrim.c
 
 Makefile
+
 libft.h
 
 strnstr
