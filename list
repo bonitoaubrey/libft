@@ -2,6 +2,7 @@ ft_itoa.c
 ft_split.c
 ft_strlcpy.c
 ft_strtrim.c
+memccpy
 
 Makefile
 
@@ -13,7 +14,6 @@ atoi
 strlen
 memcpy
 memchr
-memccpy
 calloc
 bzero
 strjoin
@@ -24,10 +24,10 @@ strchr
 isascii
 putendl_fd
 strncmp
-putstr_fd
-
-putnbr_fd
 memmove
+
+putstr_fd
+putnbr_fd
 strmapi
 memset
 substr
