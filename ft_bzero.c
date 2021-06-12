@@ -1,7 +1,7 @@
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_bzero(void *b, size_t size)
 {
-	while (n--)
-		((unsigned char *)s)[n] = '\0';
+	while (size--)
+		((unsigned char *)b)[size] = '\0';
 }

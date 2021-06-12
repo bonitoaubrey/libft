@@ -1,13 +1,12 @@
 ft_itoa.c
-ft_split.c
-ft_strlcpy.c
 ft_strtrim.c
-memccpy
 
 Makefile
-
 libft.h
 
+split
+strlcpy
+memccpy
 strnstr
 strlcat
 atoi

@@ -2,11 +2,11 @@
 
 int	ft_word_count(char *s, char c)
 {
-	size_t	word_count;
-	int		is_word;
+	int	word_count;
+	int	is_word;
 
-	is_word = 0;
 	word_count = 0;
+	is_word = 0;
 	while (*s)
 	{
 		if (is_word == 0 && *s != c)
@@ -21,43 +21,43 @@ int	ft_word_count(char *s, char c)
 	return (word_count);
 }
 
-size_t	ft_lenword(char *s, char c)
+int	len_word(char *s, char c)
 {
-	size_t	lenword;
+	int	len;
 
-	lenword = 0;
-	while (*s != c && *s++)
-		lenword++;
-	return (lenword);
+	len = 0;
+	while (*s && *s++ != c)
+		len++;
+	return (len);
 }
 
 void	*ft_free(char **arr, int i)
 {
 	while (i--)
 		free(arr[i]);
-	free (arr);
+	free(arr);
 	return (NULL);
 }
 
 char	**ft_split(const char *s, char c)
 {
 	char	**arr;
-	int		word_count;
 	int		i;
+	int		word_count;
 
+	i = 0;
 	word_count = ft_word_count((char *)s, c);
 	arr = malloc(sizeof(char *) * (word_count + 1));
 	if (!arr)
 		return (NULL);
-	i = 0;
 	while (word_count--)
 	{
-		while (*s == c && *s)
+		while (*s == c)
 			s++;
-		arr[i] = ft_substr(s, 0, ft_lenword((char *)s, c));
-		if (!arr[i])
+		arr[i] = ft_substr(s, 0, len_word((char *)s, c));
+		if (!arr)
 			return (ft_free(arr, i));
-		s += ft_lenword((char *)s, c);
+		s += len_word((char *)s, c);
 		i++;
 	}
 	arr[i] = NULL;
