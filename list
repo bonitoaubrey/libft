@@ -5,7 +5,6 @@ Makefile
 libft.h
 
 split
-strlcpy
 memccpy
 strnstr
 strlcat
@@ -24,11 +23,12 @@ isascii
 putendl_fd
 strncmp
 memmove
+memset
 
+strlcpy
 putstr_fd
 putnbr_fd
 strmapi
-memset
 substr
 isdigit
 isalpha
