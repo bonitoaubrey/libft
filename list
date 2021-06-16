@@ -1,9 +1,6 @@
-ft_itoa.c
 ft_strtrim.c
 
-Makefile
-libft.h
-
+ft_itoa.c
 split
 memccpy
 strnstr
@@ -37,3 +34,6 @@ isprint
 isalnum
 putchar_fd
 toupper
+
+Makefile
+libft.h

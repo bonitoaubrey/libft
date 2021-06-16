@@ -1,20 +1,20 @@
 #include "libft.h"
 
-int	ft_numlen(int n)
+int	numlen(int i)
 {
 	int	len;
 
 	len = 0;
-	if (n == 0)
+	if (i == 0)
 		return (1);
-	else if (n < 0)
+	if (i < 0)
 	{
+		i *= -1;
 		len++;
-		n *= -1;
 	}
-	while (n > 0)
+	while (i)
 	{
-		n /= 10;
+		i /= 10;
 		len++;
 	}
 	return (len);
@@ -22,29 +22,28 @@ int	ft_numlen(int n)
 
 char	*ft_itoa(int n)
 {
-	char	*s;
+	char	*num;
 	int		i;
 
-	i = 0;
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	i = ft_numlen(n);
-	s = malloc(i + 1);
-	if (!s)
+	i = numlen(n);
+	num = malloc(i + 1);
+	if (!num)
 		return (NULL);
-	s[i--] = '\0';
+	num[i--] = '\0';
 	if (n == 0)
-		s[0] = '0';
+		num[0] = '0';
 	if (n < 0)
 	{
-		s[0] = '-';
+		num[0] = '-';
 		n *= -1;
 	}
-	while (n > 0)
+	while (n)
 	{
-		s[i] = '0' + (n % 10);
+		num[i] = n % 10 + '0';
 		n /= 10;
 		i--;
 	}
-	return (s);
+	return (num);
 }
