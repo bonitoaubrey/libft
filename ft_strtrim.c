@@ -10,7 +10,7 @@ char	*ft_strtrim(const char *s, const char *set)
 	while (s[start] && ft_strchr(set, s[start]))
 		start++;
 	finish = ft_strlen(s + start);
-	while (ft_strchr(set, s[finish + start]))
+	while (ft_strchr(set, s[start + finish]))
 		finish--;
 	new_str = ft_substr(s, start, finish + 1);
 	if (!new_str)

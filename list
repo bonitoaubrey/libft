@@ -1,5 +1,6 @@
-ft_strtrim.c
+strrchr
 
+ft_strtrim.c
 ft_itoa.c
 split
 memccpy
@@ -14,7 +15,6 @@ bzero
 strjoin
 strdup
 memcmp
-strrchr
 strchr
 isascii
 putendl_fd
