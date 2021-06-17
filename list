@@ -1,6 +1,7 @@
 strrchr
 substr
 calloc
+strlcpy
 
 ft_strtrim.c
 ft_itoa.c
@@ -23,7 +24,6 @@ strncmp
 memset
 
 memmove
-strlcpy
 putstr_fd
 putnbr_fd
 strmapi
