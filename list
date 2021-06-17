@@ -1,4 +1,6 @@
 strrchr
+substr
+calloc
 
 ft_strtrim.c
 ft_itoa.c
@@ -10,7 +12,6 @@ atoi
 strlen
 memcpy
 memchr
-calloc
 bzero
 strjoin
 strdup
@@ -19,14 +20,13 @@ strchr
 isascii
 putendl_fd
 strncmp
-memmove
 memset
 
+memmove
 strlcpy
 putstr_fd
 putnbr_fd
 strmapi
-substr
 isdigit
 isalpha
 tolower
