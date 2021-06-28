@@ -1,24 +1,20 @@
 #include "libft.h"
 
-int	ft_isspace(char c)
-{
-	return (c == ' ' || c == '\n' || c == '\t'
-		|| c == '\r' || c == '\v' || c == '\f');
-}
-
 int	ft_atoi(const char *s)
 {
-	int	num;
-	int	minus;
+	int				i;
+	int				sign;
+	int				num;
 
-	minus = 1;
+	i = 0;
+	sign = 1;
 	num = 0;
-	while (ft_isspace(*s))
-		s++;
-	if (*s == '-' || *s == '+')
-		if (*s++ == '-')
-			minus = -1;
-	while (ft_isdigit(*s))
-		num = num * 10 + *s++ - '0';
-	return (num * minus);
+	while ((s[i] >= 9 && s[i] <= 13) || s[i] == ' ')
+		i++;
+	if (s[i] == '-' || s[i] == '+')
+		if (s[i++] == '-')
+			sign = -1;
+	while (s[i] >= '0' && s[i] <= '9')
+		num = num * 10 + s[i++] - '0';
+	return ((int)num * sign);
 }
