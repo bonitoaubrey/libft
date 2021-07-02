@@ -1,12 +1,12 @@
 strrchr
 substr
+memccpy
+
 calloc
 strlcpy
-
 ft_strtrim.c
 ft_itoa.c
 split
-memccpy
 strnstr
 strlcat
 atoi
