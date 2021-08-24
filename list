@@ -21,7 +21,6 @@ isascii
 putendl_fd
 strncmp
 memset
-
 memmove
 putstr_fd
 putnbr_fd
