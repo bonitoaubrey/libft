@@ -1,7 +1,6 @@
 strrchr
 substr
 memccpy
-
 calloc
 strlcpy
 ft_strtrim.c
