@@ -32,6 +32,3 @@ isprint
 isalnum
 putchar_fd
 toupper
-
-Makefile
-libft.h
