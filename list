@@ -3,7 +3,7 @@ substr
 memccpy
 calloc
 strlcpy
-ft_strtrim.c
+ft_strtrim
 ft_itoa.c
 split
 strnstr
