@@ -4,7 +4,7 @@ memccpy
 calloc
 strlcpy
 ft_strtrim
-ft_itoa.c
+ft_itoa
 split
 strnstr
 strlcat
