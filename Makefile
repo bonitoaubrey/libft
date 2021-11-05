@@ -25,20 +25,20 @@ OPTION = -c
 all: $(NAME)
 
 $(NAME): $(OBJ) $(HEADER)
-	@ar rc $(NAME) $(OBJ)
-	@ranlib $(NAME)
+	ar rc $(NAME) $(OBJ)
+	ranlib $(NAME)
 
 bonus: $(OBJ) $(OBJ_BONUS) $(HEADER)
-	@ar rc $(NAME) $(OBJ) $(OBJ_BONUS)
-	@ranlib $(NAME)
+	ar rc $(NAME) $(OBJ) $(OBJ_BONUS)
+	ranlib $(NAME)
 
 %.o: %.c
-	@gcc $(FLAG) $(OPTION) $< -o $@
+	gcc $(FLAG) $(OPTION) $< -o $@
 
 clean:
-	@rm -rf $(OBJ) $(OBJ_BONUS)
+	rm -rf $(OBJ) $(OBJ_BONUS)
 
 fclean: clean
-	@rm -rf $(NAME)
+	rm -rf $(NAME)
 
 re: fclean all
